@@ -1,0 +1,176 @@
+:root {
+    /* Primary Brand Colors */
+    --primary: #0ca678;
+    /* Teal Green - Vitality & Health */
+    --primary-dark: #099268;
+    --primary-light: #63e6be;
+
+    /* Secondary & Accents */
+    --secondary: #1098ad;
+    /* Cyan - Calm & Professional */
+    --accent: #ff6b6b;
+    /* Warm Coral - Alert/Action */
+
+    /* Neutrals */
+    --dark: #212529;
+    --text-body: #495057;
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+
+    /* UI Elements */
+    --border-radius: 12px;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--text-body);
+    background-color: var(--light-bg);
+}
+
+a {
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+/* Navbar Customization */
+.navbar {
+    background: var(--white);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+}
+
+.navbar-brand {
+    color: var(--primary) !important;
+    font-weight: 800;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: var(--dark) !important;
+    position: relative;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--primary) !important;
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transition: var(--transition);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    transform: scaleX(1);
+}
+
+/* General Buttons */
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(12, 166, 120, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* About Page Specifics from Inline migrated here */
+.about-hero {
+    background: linear-gradient(135deg, #087f5b 0%, #0ca678 100%);
+    color: var(--white);
+    padding: 120px 0;
+    border-radius: 0 0 50px 50px;
+    margin-bottom: 3rem;
+}
+
+.about-card {
+    background: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    height: 100%;
+    border-bottom: 4px solid transparent;
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    border-bottom-color: var(--primary);
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    background: rgba(12, 166, 120, 0.1);
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+}
+
+.about-card:hover .icon-circle {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.stats-box {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.stats-box h2 {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.about-img {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.about-img:hover {
+    transform: scale(1.02);
+}

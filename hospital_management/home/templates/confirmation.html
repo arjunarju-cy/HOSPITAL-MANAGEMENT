@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}Booking Confirmed{% endblock %}
+
+{% block content %}
+
+<style>
+    .confirm-hero {
+        background: linear-gradient(to right, #011738, #0b5ed7);
+        color: white;
+        padding: 70px 0;
+    }
+
+    .confirm-card {
+        border: none;
+        border-radius: 18px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        background: white;
+    }
+
+    .confirm-icon {
+        font-size: 70px;
+        color: #0d6efd;
+    }
+</style>
+
+<!-- Hero -->
+<section class="confirm-hero text-center">
+    <div class="container">
+        <h1 class="fw-bold">Appointment Confirmed</h1>
+        <p class="mt-3 fs-5">Thank you for choosing our hospital</p>
+    </div>
+</section>
+
+<!-- Confirmation Message -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <div class="col-lg-6">
+                <div class="card confirm-card p-5 text-center">
+
+                    <div class="confirm-icon mb-3">
+                        <i class="bi bi-check-circle-fill"></i>
+                    </div>
+
+                    <h4 class="fw-bold mb-3">Your appointment request has been received</h4>
+
+                    <p class="text-muted">
+                        Our representative will contact you shortly to confirm the details and assist you further.
+                        We appreciate your trust in our healthcare services.
+                    </p>
+
+                    <a href="{% url 'home' %}" class="btn btn-primary mt-3 px-4">
+                        Back to Home
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Book Appointment{% endblock %}
+
+{% block content %}
+
+<style>
+    .booking-hero {
+        background: linear-gradient(to right, #011738, #0b5ed7);
+        color: white;
+        padding: 70px 0;
+    }
+
+    .booking-card {
+        border: none;
+        border-radius: 18px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        background: white;
+    }
+
+    .booking-card h4 {
+        color: #0d6efd;
+        font-weight: 600;
+    }
+
+    .form-control, .form-select {
+        border-radius: 10px;
+    }
+
+    .btn-primary {
+        padding: 10px 35px;
+        border-radius: 25px;
+    }
+</style>
+
+<!-- Hero -->
+<section class="booking-hero text-center">
+    <div class="container">
+        <h1 class="fw-bold">Book an Appointment</h1>
+        <p class="mt-3 fs-5">Schedule your visit with our medical specialists</p>
+    </div>
+</section>
+
+<!-- Booking Form -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <div class="col-lg-6">
+                <div class="card booking-card p-4 p-md-5">
+
+                    <h4 class="text-center mb-4">Appointment Form</h4>
+
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+
+                        <div class="text-center mt-4">
+                            <button class="btn btn-primary">Confirm Appointment</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
