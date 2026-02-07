@@ -6,8 +6,9 @@ import sys
 def main():
     os.environ.setdefault(
         'DJANGO_SETTINGS_MODULE',
-        'hospital_management.hospital_management.settings'
+        'hospital_management.settings'
     )
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -15,6 +16,7 @@ def main():
             "Couldn't import Django. Are you sure it's installed and "
             "available on your PYTHONPATH environment variable?"
         ) from exc
+
     execute_from_command_line(sys.argv)
 
 

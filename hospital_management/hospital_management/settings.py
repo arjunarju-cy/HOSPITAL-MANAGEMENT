@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'hospital_management.home',
+    'home',
     'crispy_forms',
     'crispy_bootstrap5',
 ]
@@ -64,6 +64,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'hospital_management.urls'
+
 
 TEMPLATES = [
     {
