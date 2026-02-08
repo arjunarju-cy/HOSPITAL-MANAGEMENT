@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import BookingForm
-from .models import Department, Doctors
+from .models import Department, Doctor
 from django.core.mail import send_mail
 
 def index(request):
@@ -51,7 +51,7 @@ def department(request):
         'dept': Department.objects.all()
     })
 
-def doctors(request):
-    return render(request, 'doctors.html', {
-        'doctors': Doctors.objects.all()
+def doctor(request):
+    return render(request, 'doctor.html', {
+        'doctor': Doctor.objects.all()
     })
