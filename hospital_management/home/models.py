@@ -17,7 +17,8 @@ class Doctor(models.Model):
     doc_image = CloudinaryField('image')
 
     def __str__(self):
-        return f"Dr {self.doc_name} ({self.doc_spec})"
+        return f"Dr {self.doc_name} - {self.doc_spec}"
+
 
 
 class Booking(models.Model):
