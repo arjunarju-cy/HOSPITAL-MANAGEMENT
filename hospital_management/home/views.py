@@ -56,3 +56,4 @@ def doctor(request):
         'doctors': Doctor.objects.all()
     })
 
+
