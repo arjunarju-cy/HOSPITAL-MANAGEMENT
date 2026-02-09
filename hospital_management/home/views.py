@@ -51,9 +51,10 @@ def department(request):
         'dept': Department.objects.all()
     })
 
-def doctor(request):
-    return render(request, 'doctor.html', {
-        'doctors': Doctor.objects.all()
-    })
 
+def doctors(request):
+    doctors = Doctor.objects.all()
+    return render(request, 'doctors.html', {
+        'doctors': doctors
+    })
 
