@@ -14,33 +14,39 @@ def booking(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
-            booking = form.save()
+            booking = form.save()   
 
             subject = f'New Appointment Booking - {booking.p_name}'
-            message = f'''
-       A new booking has been made:
+            message = f"""
+A new booking has been made:
 
-       Name: {booking.p_name}
-       Phone: {booking.p_phone}
-       Email: {booking.p_email}
-       Doctor: {booking.doc_name}
-       Date: {booking.booking_date}
-       Booked On: {booking.booked_on}
-            '''
+Name: {booking.p_name}
+Phone: {booking.p_phone}
+Email: {booking.p_email}
+Doctor: {booking.doc_name}
+Date: {booking.booking_date}
+Booked On: {booking.booked_on}
+"""
 
-            send_mail(
-                subject,
-                message,
-                'your-email@gmail.com',
-                ['recipient-email@example.com'],
-                fail_silently=False,
-        )
+            
+            try:
+                send_mail(
+                    subject,
+                    message,
+                    'your-email@gmail.com',
+                    ['recipient-email@example.com'],
+                    fail_silently=True,  
+                )
+            except Exception as e:
+                print("Email error:", e)
 
             return render(request, 'confirmation.html')
+
     else:
         form = BookingForm()
 
     return render(request, 'booking.html', {'form': form})
+
 
 
 def contact(request):
