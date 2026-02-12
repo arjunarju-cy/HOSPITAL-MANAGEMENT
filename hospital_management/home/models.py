@@ -14,10 +14,11 @@ class Doctor(models.Model):
     doc_name = models.CharField(max_length=100)
     doc_spec = models.CharField(max_length=200)
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
-    doc_image = CloudinaryField('image')
+    doc_image = CloudinaryField('image', blank=True, null=True)
 
     def __str__(self):
         return f"Dr {self.doc_name} - {self.doc_spec}"
+
 
 
 

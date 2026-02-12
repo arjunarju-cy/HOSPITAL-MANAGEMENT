@@ -15,11 +15,11 @@ import dj_database_url
 import os
 from dotenv import load_dotenv
 import cloudinary
-import cloudinary.uploader
-import cloudinary.api
+
 
 # Load the .env file
 load_dotenv()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -34,10 +34,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY','django-insecure--73)($f3kv3+%fsd!&w@&r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
-ALLOWED_HOSTS = [
-    "hospital-management-c5i7.onrender.com",
-    ".onrender.com",
-]
+ALLOWED_HOSTS = ["hospital-management-c5i7.onrender.com",".onrender.com","127.0.0.1","localhost",]
 
 
 # Application definition
@@ -56,7 +53,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'cloudinary',
-    'cloudinary_storage',
 ]
 
 
@@ -155,13 +151,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
-    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
-}
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
